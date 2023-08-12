@@ -1,0 +1,81 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-08-12T03:32:04.074Z",
+        "before": [
+          {
+            "result": {
+              "duration": 15774100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "apphooks.ApplicationHooks.getProperty()"
+            }
+          },
+          {
+            "result": {
+              "duration": 22381707600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "apphooks.ApplicationHooks.launchBrowser()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Scenario to Verify logoutBySelectingUserDropdownOption",
+        "description": "",
+        "id": "logout-functionality.;scenario-to-verify-logoutbyselectinguserdropdownoption",
+        "after": [
+          {
+            "result": {
+              "duration": 8341400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 136609600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "apphooks.ApplicationHooks.quitBrowser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 14683309500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Verify logoutBySelectingUserDropdownOption",
+            "match": {
+              "location": "stepdefinitions.Logout_Step.verify_logout_by_selecting_user_dropdown_option()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag1"
+          }
+        ]
+      }
+    ],
+    "name": "Logout Functionality.",
+    "description": "",
+    "id": "logout-functionality.",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/RegressionFlowFeatures/25_Logout.feature",
+    "tags": []
+  }
+]
