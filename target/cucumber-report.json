@@ -3,11 +3,10 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2023-08-12T03:32:04.074Z",
+        "start_timestamp": "2023-08-12T17:43:39.580Z",
         "before": [
           {
             "result": {
-              "duration": 15774100,
               "status": "passed"
             },
             "match": {
@@ -16,7 +15,7 @@
           },
           {
             "result": {
-              "duration": 22381707600,
+              "duration": 24293187700,
               "status": "passed"
             },
             "match": {
@@ -24,14 +23,13 @@
             }
           }
         ],
-        "line": 4,
-        "name": "Scenario to Verify logoutBySelectingUserDropdownOption",
+        "line": 11,
+        "name": "Scenario to Login",
         "description": "",
-        "id": "logout-functionality.;scenario-to-verify-logoutbyselectinguserdropdownoption",
+        "id": "login;scenario-to-login;;2",
         "after": [
           {
             "result": {
-              "duration": 8341400,
               "status": "passed"
             },
             "match": {
@@ -40,7 +38,7 @@
           },
           {
             "result": {
-              "duration": 136609600,
+              "duration": 128495600,
               "status": "passed"
             },
             "match": {
@@ -49,33 +47,68 @@
           }
         ],
         "type": "scenario",
-        "keyword": "Scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 14683309500,
+              "duration": 1607617500,
               "status": "passed"
             },
             "line": 5,
-            "name": "Verify logoutBySelectingUserDropdownOption",
+            "name": "Enter the username and password \"Kredosadmin\" \"vassarlabs123\"",
             "match": {
-              "location": "stepdefinitions.Logout_Step.verify_logout_by_selecting_user_dropdown_option()"
+              "arguments": [
+                {
+                  "val": "\"Kredosadmin\"",
+                  "offset": 32
+                },
+                {
+                  "val": "\"vassarlabs123\"",
+                  "offset": 46
+                }
+              ],
+              "location": "stepdefinitions.Login_Steps.enter_the_username_and_password(java.lang.String,java.lang.String)"
             },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
+            "keyword": "Given "
+          },
           {
-            "name": "@tag1"
+            "result": {
+              "duration": 3066610900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "click on login",
+            "match": {
+              "location": "stepdefinitions.Login_Steps.click_on_login()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4899553400,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "verify the home page \"Success\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Success\"",
+                  "offset": 21
+                }
+              ],
+              "location": "stepdefinitions.Login_Steps.verify_the_home_page(java.lang.String)"
+            },
+            "keyword": "Then "
           }
         ]
       }
     ],
-    "name": "Logout Functionality.",
+    "name": "Login",
     "description": "",
-    "id": "logout-functionality.",
+    "id": "login",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/RegressionFlowFeatures/25_Logout.feature",
+    "uri": "file:src/test/resources/RegressionFlowFeatures/01_KredosLogin.feature",
     "tags": []
   }
 ]

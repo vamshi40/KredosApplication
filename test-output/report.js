@@ -1,14 +1,14 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "f3633b31-3469-4523-a1d6-8dc10aa453bc",
-    "feature": "Logout Functionality.",
-    "scenario": "Scenario to Verify logoutBySelectingUserDropdownOption",
-    "start": 1691811124074,
+    "id": "8c198279-6bbd-4ddf-b408-4fdeacd98a4a",
+    "feature": "Login",
+    "scenario": "Scenario to Login",
+    "start": 1691862219580,
     "group": 1,
     "content": "",
-    "tags": "@tag1,",
-    "end": 1691811161387,
+    "tags": "",
+    "end": 1691862253689,
     "className": "passed"
   }
 ]);
