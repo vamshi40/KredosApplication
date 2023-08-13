@@ -60,7 +60,7 @@ pipeline {
         success {
             mail to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
                 subject: "Example Build: ${env.JOB_NAME} - Failed", 
-                body: "Job Failed - \"${env.JOB_NAME}\" build: ${env.BUILD_NUMBER}\n\nView the log at:\n ${env.BUILD_URL}\n\nBlue Ocean:\n${env.RUN_DISPLAY_URL}"
+                body: "Job Failed - \"${env.JOB_NAME}\" build: ${env.BUILD_NUMBER}\n\nView the log at:\n ${env.BUILD_URL}\n\nBlue Ocean:\n${env.RUN_DISPLAY_URL}",
                 attachmentsPattern: 'reports/ExtentReport.html',
                 attachmentsPattern: 'reports/SparkReport.html',
                 attachmentsPattern: 'reports/ExtentPdf.pdf'
@@ -68,7 +68,7 @@ pipeline {
         failure {
             mail to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
                 subject: "Example Build: ${env.JOB_NAME} - Failed", 
-                body: "Job Failed - \"${env.JOB_NAME}\" build: ${env.BUILD_NUMBER}\n\nView the log at:\n ${env.BUILD_URL}\n\nBlue Ocean:\n${env.RUN_DISPLAY_URL}"
+                body: "Job Failed - \"${env.JOB_NAME}\" build: ${env.BUILD_NUMBER}\n\nView the log at:\n ${env.BUILD_URL}\n\nBlue Ocean:\n${env.RUN_DISPLAY_URL}",
                 attachmentsPattern: 'reports/ExtentReport.html',
                 attachmentsPattern: 'reports/SparkReport.html',
                 attachmentsPattern: 'reports/ExtentPdf.pdf'
