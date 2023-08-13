@@ -39,20 +39,27 @@ pipeline {
     post {
         always {
                 emailext attachLog: true, 
-                body: '''Hi Team,
-
-                         PFA Below are the Automation Reports
-
-                        "Job Failed - \"${env.JOB_NAME}\" build: ${env.BUILD_NUMBER}\n\nView the log at:\n ${env.BUILD_URL}\n\nBlue Ocean:\n${env.RUN_DISPLAY_URL}"
-
-
-                        please note this is auto generated email
-
-                        Thanks & Regards
-                        Vamshi QA''', 
+                    
+                body:   "Job Failed - \"${env.JOB_NAME}\" build: ${env.BUILD_NUMBER}\n\nView the log at:\n ${env.BUILD_URL}\n\nBlue Ocean:\n${env.RUN_DISPLAY_URL}",
                 subject: 'Cucumber Automation Report', 
                 attachmentsPattern: 'reports/ExtentReport.html',
                 to: 'vamshi.krishna@vassarlabs.com'
+        }
+         success {
+             emailext( 
+                to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
+                subject: "Example Build: ${env.JOB_NAME} - Failed", 
+                body: "Job Failed - \"${env.JOB_NAME}\" build: ${env.BUILD_NUMBER}\n\nView the log at:\n ${env.BUILD_URL}\n\nBlue Ocean:\n${env.RUN_DISPLAY_URL}",
+                attachmentsPattern: 'reports/ExtentReport.html'
+                      )
+        }
+        failure {
+             emailext( 
+                to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
+                subject: "Example Build: ${env.JOB_NAME} - Failed", 
+                body: "Job Failed - \"${env.JOB_NAME}\" build: ${env.BUILD_NUMBER}\n\nView the log at:\n ${env.BUILD_URL}\n\nBlue Ocean:\n${env.RUN_DISPLAY_URL}",
+                attachmentsPattern: 'reports/ExtentReport.html'
+                      )
         }
    }
 }
