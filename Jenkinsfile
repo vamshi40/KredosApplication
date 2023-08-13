@@ -35,8 +35,8 @@ pipeline {
     }
 
     post {
-        failure {
-            
+        always {
+            cucumber buildStatus: 'null', fileIncludePattern: 'cucumber-report.json', jsonReportDirectory: 'target', sortingMethod: 'ALPHABETICAL'
             emailext body: 'Jenkins build failed', subject: 'Automation Report', to: 'vamshi.krishna@vassarlabs.com'
             echo "Email sent for Jenkins build failed"
         }
