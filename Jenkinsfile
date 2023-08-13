@@ -6,7 +6,7 @@ pipeline {
             steps {
  
                 // To run Maven on a Windows agent, use
-                bat "mvn -D clean test"
+                bat 'Run'
             }
  
             post {
