@@ -39,11 +39,12 @@ pipeline {
   post {
     success {
         emailext( 
+            attachLog: true,
             to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
             subject: "Automation Report For: ${env.JOB_NAME} - Success", 
             body: """Hi Team,
 
-Please Find the Automation Report:
+Automation Report Details:
 
 Status: Job Success
 Application Name: "${env.JOB_NAME}"
@@ -55,7 +56,7 @@ ${env.BUILD_URL}
 Blue Ocean:
 ${env.RUN_DISPLAY_URL}
 
-Please find attachments below:
+Please find attachments below are the Automation Test Reports:
 
 Thanks & Regards,
 VamshiQA""",
@@ -64,11 +65,12 @@ VamshiQA""",
     }
     failure {
         emailext( 
+            attachLog: true,
             to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
             subject: "Automation Report For: ${env.JOB_NAME} - Failed", 
             body: """Hi Team,
 
-Please Find the Automation Report:
+Automation Report Details:
 
 Status: Job Failed
 Application Name: "${env.JOB_NAME}"
@@ -80,7 +82,7 @@ ${env.BUILD_URL}
 Blue Ocean:
 ${env.RUN_DISPLAY_URL}
 
-Please find attachments below:
+Please find attachments below are the Automation Test Reports:
 
 Thanks & Regards,
 VamshiQA""",
