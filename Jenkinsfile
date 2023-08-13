@@ -38,12 +38,18 @@ pipeline {
 
     post {
         always {
-         
-            emailext attachLog: true, body: '''Hi Team,
-
-            The Automation Scripts Runned Successfully
-
-            ''', subject: 'Automation Report', to: 'vamshi.krishna@vassarlabs.com'
+       
+           script {
+                def reportsPath = findFiles(glob: 'reports/ExtentReport.html')
+                if (!reportsPath.isEmpty()) {
+                    emailext (
+                        subject: 'Cucumber Test Report',
+                        body: 'Attached is the Cucumber test report.',
+                        attachmentsPattern: 'reports/ExtentReport.html',
+                        to: 'vamshi.krishna@vassarlabs.com',
+                    )
+                }
+            }
         }
     }
 }
