@@ -38,12 +38,12 @@ pipeline {
 
     post {
         always {
-            cucumber buildStatus: 'null', fileIncludePattern: 'cucumber-report.json', jsonReportDirectory: 'target', sortingMethod: 'ALPHABETICAL'
+         
             emailext attachLog: true, body: '''Hi Team,
 
-The Automation Scripts Runned Successfully
+            The Automation Scripts Runned Successfully
 
-''', subject: 'Automation Report', to: 'vamshi.krishna@vassarlabs.com'
+            ''', subject: 'Automation Report', to: 'vamshi.krishna@vassarlabs.com'
         }
     }
 }
