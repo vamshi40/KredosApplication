@@ -26,12 +26,6 @@ pipeline {
                 bat "mvn test"
             }
         }
-        stage('Stage 4 - Create build') {
-            steps {
-                // Command to create the build of the project							
-                bat "mvn package"
-            }
-        }
     }
 
     post {
