@@ -36,24 +36,56 @@ pipeline {
         }
     }
 
-    post {
-         success {
-             emailext( 
-                to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
-                subject: "Automation Report For: ${env.JOB_NAME} - Success", 
-                body: "Hi Team \n\n  Please Find the Automation Report \n\n Status -- Job Success  \n\n\ Application Name -- "${env.JOB_NAME}\" \n\n BuildNo -- build: ${env.BUILD_NUMBER} \n\n View the log at:\n ${env.BUILD_URL} \n\n Blue Ocean:\n${env.RUN_DISPLAY_URL}" \n\n Please Find Attachments Below are the Automation Reports\n\n,
-                presendScript: Thanks & Regards\nVamshiQA
-                attachmentsPattern: 'reports/ExtentReport.html'
-                      )
-        }
-        failure {
-             emailext( 
-                 to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
-                 subject: "Automation Report For: ${env.JOB_NAME} - Failed", 
-                 body: "Hi Team \n\n  Please Find the Automation Report \n\n Status -- Job Success  \n\n\ Application Name -- "${env.JOB_NAME}\" \n\n BuildNo -- build: ${env.BUILD_NUMBER} \n\n View the log at:\n ${env.BUILD_URL} \n\n Blue Ocean:\n${env.RUN_DISPLAY_URL}" \n\n Please Find Attachments Below are the Automation Reports\n\n,
-                 presendScript: Thanks & Regards\nVamshiQA
-                 attachmentsPattern: 'reports/ExtentReport.html'
-                      )
-        }
-   }
+  post {
+    success {
+        emailext( 
+            to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
+            subject: "Automation Report For: ${env.JOB_NAME} - Success", 
+            body: """Hi Team,
+
+Please Find the Automation Report:
+
+Status: Job Success
+Application Name: "${env.JOB_NAME}"
+BuildNo: build: ${env.BUILD_NUMBER}
+
+View the log at:
+${env.BUILD_URL}
+
+Blue Ocean:
+${env.RUN_DISPLAY_URL}
+
+Please find attachments below:
+
+Thanks & Regards,
+VamshiQA""",
+            attachmentsPattern: 'reports/ExtentReport.html'
+        )
+    }
+    failure {
+        emailext( 
+            to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
+            subject: "Automation Report For: ${env.JOB_NAME} - Failed", 
+            body: """Hi Team,
+
+Please Find the Automation Report:
+
+Status: Job Failed
+Application Name: "${env.JOB_NAME}"
+BuildNo: build: ${env.BUILD_NUMBER}
+
+View the log at:
+${env.BUILD_URL}
+
+Blue Ocean:
+${env.RUN_DISPLAY_URL}
+
+Please find attachments below:
+
+Thanks & Regards,
+VamshiQA""",
+            attachmentsPattern: 'reports/ExtentReport.html'
+        )
+    }
+}
 }
