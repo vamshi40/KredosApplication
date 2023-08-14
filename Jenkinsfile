@@ -42,7 +42,7 @@ pipeline {
             attachLog: true,
             to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
             subject: "Jenkins Pipeline Automation Report For Project: ${env.JOB_NAME} - Success", 
-            body: """<p style="font-family: Arial, sans-serif; font-size: 14px;">
+            body: <p style="font-family: Arial, sans-serif; font-size: 14px;">
 Hi Team,<br><br>
 
 Automation Report Details:<br><br>
@@ -61,7 +61,7 @@ Please find attachments below are the Automation Test Reports:<br><br>
 
 Thanks & Regards,<br>
 VamshiQA
-</p>""",
+</p>,
             attachmentsPattern: 'reports/ExtentReport.html,reports/SparkReport.html,reports/ExtentPdf.pdf'
         )
     }
@@ -71,7 +71,7 @@ VamshiQA
         attachLog: true,
         to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
         subject: "Jenkins Pipeline Automation Report For Project: ${env.JOB_NAME} - Failed", 
-        body: """<p style="font-family: Arial, sans-serif; font-size: 14px;">
+        body: <p style="font-family: Arial, sans-serif; font-size: 14px;">
 Hi Team,<br><br>
 
 Automation Report Details:<br><br>
@@ -90,7 +90,7 @@ Please find attachments below are the Automation Test Reports:<br><br>
 
 Thanks & Regards,<br>
 VamshiQA
-</p>""",
+</p>,
         attachmentsPattern: 'reports/ExtentReport.html,reports/SparkReport.html,reports/ExtentPdf.pdf'
     )
 }
