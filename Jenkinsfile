@@ -42,59 +42,53 @@ pipeline {
             attachLog: true,
             to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
             subject: "Jenkins Pipeline Automation Report For Project: ${env.JOB_NAME} - Success", 
-            body: <p style="font-family: Arial, sans-serif; font-size: 14px;">
-Hi Team,<br><br>
+            body: """Hi Team,
 
-Automation Report Details:<br><br>
+Automation Report Details:
 
-Status: Job Success<br>
-Application Name: "${env.JOB_NAME}"<br>
-BuildNo: build: ${env.BUILD_NUMBER}<br><br>
+Status: Job Success
+Application Name: "${env.JOB_NAME}"
+BuildNo: build: ${env.BUILD_NUMBER}
 
-View the log at:<br>
-${env.BUILD_URL}<br><br>
+View the log at:
+${env.BUILD_URL}
 
-Blue Ocean:<br>
-${env.RUN_DISPLAY_URL}<br><br>
+Blue Ocean:
+${env.RUN_DISPLAY_URL}
 
-Please find attachments below are the Automation Test Reports:<br><br>
+Please find attachments below are the Automation Test Reports:
 
-Thanks & Regards,<br>
-VamshiQA
-</p>,
+Thanks & Regards,
+VamshiQA""",
             attachmentsPattern: 'reports/ExtentReport.html,reports/SparkReport.html,reports/ExtentPdf.pdf'
         )
     }
-
     failure {
-    emailext( 
-        attachLog: true,
-        to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
-        subject: "Jenkins Pipeline Automation Report For Project: ${env.JOB_NAME} - Failed", 
-        body: <p style="font-family: Arial, sans-serif; font-size: 14px;">
-Hi Team,<br><br>
+        emailext( 
+            attachLog: true,
+            to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
+            subject: "Jenkins Pipeline Automation Report For Project: ${env.JOB_NAME} - Failed", 
+            body: """Hi Team,
 
-Automation Report Details:<br><br>
+Automation Report Details:
 
-Status: Job Failed<br>
-Application Name: "${env.JOB_NAME}"<br>
-BuildNo: build: ${env.BUILD_NUMBER}<br><br>
+Status: Job Failed
+Application Name: "${env.JOB_NAME}"
+BuildNo: build: ${env.BUILD_NUMBER}
 
-View the log at:<br>
-${env.BUILD_URL}<br><br>
+View the log at:
+${env.BUILD_URL}
 
-Blue Ocean:<br>
-${env.RUN_DISPLAY_URL}<br><br>
+Blue Ocean:
+${env.RUN_DISPLAY_URL}
 
-Please find attachments below are the Automation Test Reports:<br><br>
+Please find attachments below are the Automation Test Reports:
 
-Thanks & Regards,<br>
-VamshiQA
-</p>,
-        attachmentsPattern: 'reports/ExtentReport.html,reports/SparkReport.html,reports/ExtentPdf.pdf'
-    )
+Thanks & Regards,
+VamshiQA""",
+            attachmentsPattern: 'reports/ExtentReport.html,reports/SparkReport.html,reports/ExtentPdf.pdf'
+        )
+    }
 }
- }
 }
-
 
