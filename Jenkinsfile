@@ -36,58 +36,65 @@ pipeline {
         }
     }
 
-  post {
+ post {
     success {
         emailext( 
             attachLog: true,
             to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
-            subject: "Automation Report For: ${env.JOB_NAME} - Success", 
-            body: """Hi Team,
+            subject: "Jenkins Pipeline Automation Report For Project: ${env.JOB_NAME} - Success", 
+            body: """<p style="font-family: Arial, sans-serif; font-size: 14px;">
+Hi Team,<br><br>
 
-Automation Report Details:
+Automation Report Details:<br><br>
 
-Status: Job Success
-Application Name: "${env.JOB_NAME}"
-BuildNo: build: ${env.BUILD_NUMBER}
+Status: Job Success<br>
+Application Name: "${env.JOB_NAME}"<br>
+BuildNo: build: ${env.BUILD_NUMBER}<br><br>
 
-View the log at:
-${env.BUILD_URL}
+View the log at:<br>
+${env.BUILD_URL}<br><br>
 
-Blue Ocean:
-${env.RUN_DISPLAY_URL}
+Blue Ocean:<br>
+${env.RUN_DISPLAY_URL}<br><br>
 
-Please find attachments below are the Automation Test Reports:
+Please find attachments below are the Automation Test Reports:<br><br>
 
-Thanks & Regards,
-VamshiQA""",
+Thanks & Regards,<br>
+VamshiQA
+</p>""",
             attachmentsPattern: 'reports/ExtentReport.html,reports/SparkReport.html,reports/ExtentPdf.pdf'
         )
     }
+
     failure {
-        emailext( 
-            attachLog: true,
-            to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
-            subject: "Automation Report For: ${env.JOB_NAME} - Failed", 
-            body: """Hi Team,
+    emailext( 
+        attachLog: true,
+        to: 'vamshi.krishna@vassarlabs.com', from: 'jenkins@example.com',
+        subject: "Jenkins Pipeline Automation Report For Project: ${env.JOB_NAME} - Failed", 
+        body: """<p style="font-family: Arial, sans-serif; font-size: 14px;">
+Hi Team,<br><br>
 
-Automation Report Details:
+Automation Report Details:<br><br>
 
-Status: Job Failed
-Application Name: "${env.JOB_NAME}"
-BuildNo: build: ${env.BUILD_NUMBER}
+Status: Job Failed<br>
+Application Name: "${env.JOB_NAME}"<br>
+BuildNo: build: ${env.BUILD_NUMBER}<br><br>
 
-View the log at:
-${env.BUILD_URL}
+View the log at:<br>
+${env.BUILD_URL}<br><br>
 
-Blue Ocean:
-${env.RUN_DISPLAY_URL}
+Blue Ocean:<br>
+${env.RUN_DISPLAY_URL}<br><br>
 
-Please find attachments below are the Automation Test Reports:
+Please find attachments below are the Automation Test Reports:<br><br>
 
-Thanks & Regards,
-VamshiQA""",
-            attachmentsPattern: 'reports/ExtentReport.html,reports/SparkReport.html,reports/ExtentPdf.pdf'
-        )
-    }
+Thanks & Regards,<br>
+VamshiQA
+</p>""",
+        attachmentsPattern: 'reports/ExtentReport.html,reports/SparkReport.html,reports/ExtentPdf.pdf'
+    )
 }
+ }
 }
+
+
