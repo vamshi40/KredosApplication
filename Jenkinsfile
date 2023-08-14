@@ -48,7 +48,7 @@ Automation Report Details:
 
 Status: Job Success
 Application Name: "${env.JOB_NAME}"
-BuildNo: build: ${env.BUILD_NUMBER}
+BuildNo: ${env.BUILD_NUMBER}
 
 View the log at:
 ${env.BUILD_URL}
@@ -74,7 +74,7 @@ Automation Report Details:
 
 Status: Job Failed
 Application Name: "${env.JOB_NAME}"
-BuildNo: build: ${env.BUILD_NUMBER}
+BuildNo: ${env.BUILD_NUMBER}
 
 View the log at:
 ${env.BUILD_URL}
