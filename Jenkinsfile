@@ -20,7 +20,7 @@ pipeline {
                 // or: sh "mvn compile"
             }
         }
-        stage('Stage 3 - Run Unit Tests') {
+        stage('Stage 3 - Run Regression Tests') {
             steps {
                 // Command to run tests							
                 bat "mvn test"
@@ -60,7 +60,7 @@ Please find attachments below are the Automation Test Reports:
 
 Thanks & Regards,
 VamshiQA""",
-            attachmentsPattern: 'reports/ExtentReport.html'
+            attachmentsPattern: 'reports/ExtentReport.html,reports/SparkReport.html,reports/ExtentPdf.pdf'
         )
     }
     failure {
@@ -86,7 +86,7 @@ Please find attachments below are the Automation Test Reports:
 
 Thanks & Regards,
 VamshiQA""",
-            attachmentsPattern: 'reports/ExtentReport.html'
+            attachmentsPattern: 'reports/ExtentReport.html,reports/SparkReport.html,reports/ExtentPdf.pdf'
         )
     }
 }
