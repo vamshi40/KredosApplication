@@ -1,5 +1,5 @@
 Feature:Add Customer.
-@tag1111
+@tag1
   Scenario Outline:Scenario to Add Customer.
 
     Given Login to Kredos Application with <Username> and <Password>
