@@ -40,7 +40,7 @@ pipeline {
     success {
         emailext( 
             attachLog: true,
-              to: 'vamshi.krishna@vassarlabs.com,vamshikrishna556677@gmail.com', from: 'jenkins@example.com',
+            to: 'vamshi.krishna@vassarlabs.com,vamshikrishna556677@gmail.com,uttham@vassarlabs.com,naveenkumar@vassarlabs.com', from: 'jenkins@example.com',
             subject: "Jenkins Pipeline Automation Report For Project: ${env.JOB_NAME} - Success", 
             body: """Hi Team,
 
@@ -66,7 +66,7 @@ VamshiQA""",
     failure {
         emailext( 
             attachLog: true,
-            to: 'vamshi.krishna@vassarlabs.com,vamshikrishna556677@gmail.com', from: 'jenkins@example.com',
+            to: 'vamshi.krishna@vassarlabs.com,vamshikrishna556677@gmail.com,uttham@vassarlabs.com,naveenkumar@vassarlabs.com', from: 'jenkins@example.com',
             subject: "Jenkins Pipeline Automation Report For Project: ${env.JOB_NAME} - Failed", 
             body: """Hi Team,
 
