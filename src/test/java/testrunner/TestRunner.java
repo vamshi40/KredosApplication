@@ -11,6 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = {"src/test/resources/RegressionFlowFeatures"},
         glue = {"stepdefinitions", "apphooks"},
+        tags =  "@tag1 or @tag2 or @tag3 or @tag4 or @tag5 or @tag6 or @tag7 or @tag8 or @tag9",
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "html:target/cucumber-report.html", "timeline:test-output/", "json:target/cucumber-report.json",
                 "summary"
