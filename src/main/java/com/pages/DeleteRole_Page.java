@@ -62,9 +62,6 @@ public class DeleteRole_Page {
             Thread.sleep(1000);
             Assert.assertEquals(actualMessage, Toaster_Message, "Expected : " + Toaster_Message + " But found : " + actualMessage);
 
-
-
-
         }
 
     }

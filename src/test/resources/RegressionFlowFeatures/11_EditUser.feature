@@ -10,6 +10,6 @@ Feature:Edit User
     Examples:
 
       | Username      | Password        | Email                      | NEmail                     | Update_Btn | Toaster_Message                         |
-#      | "kredosadmin" | "vassarlabs123" | "kredostestuser@gmail.com" | "test123@gmail.com"        | "Fail"     | "Error occured while updating the user" |
-#      | "kredosadmin" | "vassarlabs123" | "kredostestuser@gmail.com" | ""                         | ""         | ""                                      |
+      | "kredosadmin" | "vassarlabs123" | "kredostestuser@gmail.com" | "test123@gmail.com"        | "Fail"     | "Error occured while updating the user" |
+      | "kredosadmin" | "vassarlabs123" | "kredostestuser@gmail.com" | ""                         | ""         | ""                                      |
       | "kredosadmin" | "vassarlabs123" | "kredostestuser@gmail.com" | "kredosusertest@gmail.com" | "Success"  | "Successfully updated user details"     |

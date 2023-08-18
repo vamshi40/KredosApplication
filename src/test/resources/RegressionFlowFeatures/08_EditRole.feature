@@ -10,6 +10,6 @@ Feature:Edit Role
     Examples:
 
       | Username      | Password        | Role_Name     | NRole_Name     | Napplication_Name          | Ndescription                  | Submit    | Toaster_Message             |
-#      | "kredosadmin" | "vassarlabs123" | "kredosrole"  | "testrole"     | "kredos Messaging module " | "testrole description"        | "Fail"    | "Role name Already Exists"  |
-#      | "kredosadmin" | "vassarlabs123" | "kredosrole"  | ""             | "kredos Messaging module " | ""                            | ""        | ""                          |
+      | "kredosadmin" | "vassarlabs123" | "kredosrole"  | "testrole"     | "kredos Messaging module " | "testrole description"        | "Fail"    | "Role name Already Exists"  |
+      | "kredosadmin" | "vassarlabs123" | "kredosrole"  | ""             | "kredos Messaging module " | ""                            | ""        | ""                          |
       | "kredosadmin" | "vassarlabs123" | "kredosrole1" | "Kredos Role1" | "kredos Messaging module " | "kredos testing role updated" | "Success" | "Role updated successfully" |

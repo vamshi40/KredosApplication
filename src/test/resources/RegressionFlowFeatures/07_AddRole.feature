@@ -11,8 +11,8 @@ Feature:Add Role
 
       | Username      | Password        | Role_Name    | Application_Name           | Role_Description      | Submit    | Toaster_Message             |
       | "kredosadmin" | "vassarlabs123" | "testrole"   | "kredos Messaging module " | "kredos test role"    | "Success" | "Role created successfully" |
-#      | "kredosadmin" | "vassarlabs123" | "testrole"   | "kredos Messaging module " | "testing role"        | "Fail"    | "Role name exists"          |
-#      | "kredosadmin" | "vassarlabs123" | ""           | "kredos Messaging module " | "testing role"        | ""        | ""                          |
-#      | "kredosadmin" | "vassarlabs123" | "testrole"   | ""                         | "testing role"        | ""        | ""                          |
+      | "kredosadmin" | "vassarlabs123" | "testrole"   | "kredos Messaging module " | "testing role"        | "Fail"    | "Role name exists"          |
+      | "kredosadmin" | "vassarlabs123" | ""           | "kredos Messaging module " | "testing role"        | ""        | ""                          |
+      | "kredosadmin" | "vassarlabs123" | "testrole"   | ""                         | "testing role"        | ""        | ""                          |
       | "kredosadmin" | "vassarlabs123" | "kredosrole1" | "kredos Messaging module " | "kredos testing role" | "Success" | "Role created successfully" |
 
